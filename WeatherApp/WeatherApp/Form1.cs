@@ -21,5 +21,10 @@ namespace WeatherApp
         {
 
         }
+
+        private void butReload_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -93,9 +93,9 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(1394, 676);
+            this.btnShow.Location = new System.Drawing.Point(1379, 683);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(47, 45);
+            this.btnShow.Size = new System.Drawing.Size(78, 38);
             this.btnShow.TabIndex = 45;
             this.btnShow.Text = "Tải ";
             this.btnShow.UseVisualStyleBackColor = false;

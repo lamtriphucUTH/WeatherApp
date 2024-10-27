@@ -40,6 +40,35 @@ namespace WeatherApp
             GetCurrentLocationWeather();
         }
 
+        // Khởi tạo DataGridView
+        private void InitializeDataGridView()
+        {
+            dataGridView1.Columns.Clear();
+
+            dataGridView1.Columns.Add("Date", "Ngày");
+            dataGridView1.Columns.Add("Time", "Giờ");
+            dataGridView1.Columns.Add("Temperature", "Nhiệt Độ");
+            dataGridView1.Columns.Add("Condition", "Trạng Thái");
+
+            var weatherIconColumn = new DataGridViewImageColumn
+            {
+                Name = "WeatherIcon",
+                HeaderText = "",
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+            dataGridView1.Columns.Add(weatherIconColumn);
+
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView1.Columns["Date"].Width = 80;
+            dataGridView1.Columns["Time"].Width = 60;
+            dataGridView1.Columns["Temperature"].Width = 50;
+            dataGridView1.Columns["Condition"].Width = 120;
+            dataGridView1.Columns["WeatherIcon"].Width = 70;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
 

@@ -68,6 +68,8 @@
             this.TBCity = new System.Windows.Forms.TextBox();
             this.labTemperature = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.cartesianChart2 = new LiveCharts.Wpf.CartesianChart();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -500,11 +502,11 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(724, 561);
+            this.dataGridView1.Location = new System.Drawing.Point(724, 603);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(582, 250);
+            this.dataGridView1.Size = new System.Drawing.Size(582, 208);
             this.dataGridView1.TabIndex = 74;
             // 
             // picIcon
@@ -647,12 +649,23 @@
             this.labTemperature.TabIndex = 68;
             this.labTemperature.Text = "°C";
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(724, 470);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(582, 131);
+            this.elementHost1.TabIndex = 81;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.cartesianChart2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::WeatherApp.Properties.Resources.bg4;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1473, 823);
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.butReload);
             this.Controls.Add(this.butExit);
@@ -723,6 +736,8 @@
         private System.Windows.Forms.TextBox TBCity;
         private System.Windows.Forms.Label labTemperature;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.CartesianChart cartesianChart2;
     }
 }
 

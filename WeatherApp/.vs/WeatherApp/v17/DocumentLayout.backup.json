@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\",
+  "WorkspaceRootPath": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|d:\\du_an_cuoi_ky\\weatherapp\\weatherapp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|d:\\study\\weatherapp\\weatherapp\\weatherapp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\weatherapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\weatherapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\weatherapp\\weatherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\weatherapp\\weatherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\weatherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,40 +26,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
+              "DocumentMoniker": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
               "RelativeDocumentMoniker": "WeatherApp\\Form1.cs",
-              "ToolTip": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
+              "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
               "RelativeToolTip": "WeatherApp\\Form1.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwBgAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAIwGcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T12:34:41.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "WeatherInfo.cs",
-              "DocumentMoniker": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherInfo.cs",
+              "DocumentMoniker": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherInfo.cs",
               "RelativeDocumentMoniker": "WeatherApp\\WeatherInfo.cs",
-              "ToolTip": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherInfo.cs",
+              "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherInfo.cs",
               "RelativeToolTip": "WeatherApp\\WeatherInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAoAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAoAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T12:29:43.53Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\Program.cs",
+              "DocumentMoniker": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Program.cs",
               "RelativeDocumentMoniker": "WeatherApp\\Program.cs",
-              "ToolTip": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\Program.cs",
+              "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Program.cs",
               "RelativeToolTip": "WeatherApp\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -67,11 +71,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
+              "DocumentMoniker": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
               "RelativeDocumentMoniker": "WeatherApp\\Form1.cs",
-              "ToolTip": "D:\\Du_an_Cuoi_Ky\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs [Design]",
+              "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs [Design]",
               "RelativeToolTip": "WeatherApp\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-22T00:06:03.473Z",

@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using Newtonsoft.Json;
 using System.Drawing;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using System.Linq;
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Defaults;
+using System.Net.Http;
+using System.IO;
+
 
 namespace WeatherApp
 {
@@ -34,10 +36,35 @@ namespace WeatherApp
             InitializeDataGridView();
 
             // Khởi tạo AutoComplete
-            SetupAutoComplete();
+            NewMethod();
 
             // Lấy thông tin thời tiết cho vị trí hiện tại
             GetCurrentLocationWeather();
+        }
+
+        private void GetCurrentLocationWeather()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TimerDateTime_Tick(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void NewMethod()
+        {
+            SetupAutoComplete();
+        }
+
+        private static void SetupAutoComplete()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TBCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         // Khởi tạo DataGridView
@@ -79,7 +106,18 @@ namespace WeatherApp
 
         }
 
-        private void labSunrise_Click(object sender, EventArgs e)
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void butExit_Click(object sender, EventArgs e)
         {
 
         }

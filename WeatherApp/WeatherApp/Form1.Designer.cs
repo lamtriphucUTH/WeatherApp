@@ -36,7 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.labSunrise = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labSunset = new System.Windows.Forms.Label();
             this.butReload = new System.Windows.Forms.Button();
@@ -93,9 +92,9 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(1379, 683);
+            this.btnShow.Location = new System.Drawing.Point(1353, 683);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(78, 38);
+            this.btnShow.Size = new System.Drawing.Size(104, 38);
             this.btnShow.TabIndex = 45;
             this.btnShow.Text = "Tải ";
             this.btnShow.UseVisualStyleBackColor = false;
@@ -129,11 +128,11 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(767, 409);
+            this.dataGridView1.Location = new System.Drawing.Point(767, 511);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(606, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(580, 210);
             this.dataGridView1.TabIndex = 42;
             // 
             // label3
@@ -160,18 +159,6 @@
             this.labSunrise.TabIndex = 6;
             this.labSunrise.Text = "N/A";
             this.labSunrise.Click += new System.EventHandler(this.labSunrise_Click);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(910, 378);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(298, 28);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Nhiệt Độ Của 5 Ngày Tiếp Theo";
             // 
             // label7
             // 
@@ -613,7 +600,6 @@
             this.Controls.Add(this.labDetail2);
             this.Controls.Add(this.labAdvice);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.butReload);
             this.Controls.Add(this.butExit);
             this.Controls.Add(this.groupBox1);
@@ -646,7 +632,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labSunrise;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labSunset;
         private System.Windows.Forms.Button butReload;

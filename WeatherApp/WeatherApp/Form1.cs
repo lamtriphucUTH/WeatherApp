@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Weather.WeatherInfo;
 
 namespace WeatherApp
 {
@@ -67,6 +68,61 @@ namespace WeatherApp
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
         }
 
+        // Xử lý sự kiện khi nhấn nút Search
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await GetWeatherByCity();
+        }
+
+        // Xử lý sự kiện khi nhấn Enter trong TextBox thành phố
+        private async void TBCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                await GetWeatherByCity();
+                e.Handled = true;
+            }
+        }
+
+        // Lấy thông tin thời tiết dựa trên tên thành phố
+        private async Task GetWeatherByCity()
+        {
+            string city = TBCity.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(city))
+            {
+                MessageBox.Show("Vui lòng nhập tên thành phố hợp lệ.");
+                return;
+            }
+
+            try
+            {
+                // Lấy thông tin thời tiết hiện tại
+                string weatherUrl = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIKey}";
+                var weatherJson = await httpClient.GetStringAsync(weatherUrl);
+                root currentInfo = JsonConvert.DeserializeObject<root>(weatherJson);
+
+                // Lấy thông tin dự báo thời tiết
+                string forecastUrl = $"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={APIKey}";
+                var forecastJson = await httpClient.GetStringAsync(forecastUrl);
+                ForecastRoot forecastInfo = JsonConvert.DeserializeObject<ForecastRoot>(forecastJson);
+
+                // Cập nhật giao diện
+                UpdateCurrentWeather(currentInfo);
+                await UpdateForecast(forecastInfo); // Chờ UpdateForecast hoàn thành
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+            finally
+            {
+                TBCity.Clear();
+            }
+        }
+
+
+
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -83,5 +139,30 @@ namespace WeatherApp
         {
 
         }
+
+        // Chuyển đổi Unix Timestamp sang DateTime
+        private DateTime convertDatime(long millisec)
+        {
+            DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
+            return day.AddSeconds(millisec).ToLocalTime();
+        }
+
+        // Xử lý sự kiện tick của timer đồng hồ
+        private void TimerDateTime_Tick(object sender, EventArgs e)
+        {
+            labDateTime.Text = DateTime.Now.ToString("HH:mm");
+            labDateTime2.Text = DateTime.Now.ToString("dddd, dd - M - yyyy");
+        }
+
+        // Xử lý sự kiện khi nhấn nút Exit
+        private void butExit_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
+
     }
 }

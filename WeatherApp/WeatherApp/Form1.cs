@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using System.Drawing;
 using System.Windows.Forms;
-using static Weather.WeatherInfo;
 using System.Collections.Generic;
 using System.Linq;
 using LiveCharts;
@@ -11,6 +10,8 @@ using LiveCharts.Defaults;
 using System.Net.Http;
 using System.IO;
 using System.Threading.Tasks;
+using static Weather_Application.WeatherInfo;
+
 namespace WeatherApp
 {
     public partial class Form1 : Form
@@ -26,7 +27,8 @@ namespace WeatherApp
 
             // Khởi tạo timer cho đồng hồ
             timerDateTime = new Timer { Interval = 1000 };
-            timerDateTime.Tick += TimerDateTime_Tick;
+            EventHandler timerDateTime_Tick = TimerDateTime_Tick;
+            timerDateTime.Tick += timerDateTime_Tick;
             timerDateTime.Start();
 
             // Bắt sự kiện khi nhấn Enter trong TextBox thành phố
@@ -68,7 +70,7 @@ namespace WeatherApp
             UpdateWeatherAdvice(currentInfo.weather[0].description.ToLower());
         }
 
-        private void TimerDateTime_Tick(object sender, EventArgs e)
+        private void UpdateWeatherAdvice(object value)
         {
             throw new NotImplementedException();
         }
@@ -79,11 +81,6 @@ namespace WeatherApp
         }
 
         private static void SetupAutoComplete()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void TBCity_KeyPress(object sender, KeyPressEventArgs e)
         {
             throw new NotImplementedException();
         }
@@ -156,7 +153,7 @@ namespace WeatherApp
 
                 // Cập nhật giao diện
                 UpdateCurrentWeather(currentInfo);
-                await UpdateForecast(forecastInfo); // Chờ UpdateForecast hoàn thành
+                UpdateForecast(forecastInfo); // Chờ UpdateForecast hoàn thành
             }
             catch (Exception ex)
             {
@@ -168,25 +165,11 @@ namespace WeatherApp
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void UpdateForecast(ForecastRoot forecastInfo)
         {
-
+            throw new NotImplementedException();
         }
 
-        private void butReload_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnShow_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ButExit_Click(object sender, EventArgs e)
-        {
-
-        }
 
         // Chuyển đổi Unix Timestamp sang DateTime
         private DateTime convertDatime(long millisec)
@@ -201,16 +184,13 @@ namespace WeatherApp
             labDateTime.Text = DateTime.Now.ToString("HH:mm");
             labDateTime2.Text = DateTime.Now.ToString("dddd, dd - M - yyyy");
         }
-
         // Xử lý sự kiện khi nhấn nút Exit
-        private void butExit_Click(object sender, EventArgs e)
+        private void btnExit_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn thoát?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Close();
             }
         }
-
-
     }
 }

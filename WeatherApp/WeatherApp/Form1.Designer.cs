@@ -39,7 +39,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.labSunset = new System.Windows.Forms.Label();
             this.butReload = new System.Windows.Forms.Button();
-            this.butExit = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label10 = new System.Windows.Forms.Label();
             this.labGrndLevel = new System.Windows.Forms.Label();
@@ -197,20 +197,20 @@
             this.butReload.TabIndex = 40;
             this.butReload.Text = "Tải Lại";
             this.butReload.UseVisualStyleBackColor = false;
-            this.butReload.Click += new System.EventHandler(this.butReload_Click);
             // 
-            // butExit
+            // btnExit
             // 
-            this.butExit.BackColor = System.Drawing.Color.Transparent;
-            this.butExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.butExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butExit.ForeColor = System.Drawing.Color.Red;
-            this.butExit.Location = new System.Drawing.Point(15, 697);
-            this.butExit.Name = "butExit";
-            this.butExit.Size = new System.Drawing.Size(94, 35);
-            this.butExit.TabIndex = 39;
-            this.butExit.Text = "Thoát";
-            this.butExit.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExit.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Red;
+            this.btnExit.Location = new System.Drawing.Point(12, 686);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(94, 35);
+            this.btnExit.TabIndex = 39;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label10
             // 
@@ -612,7 +612,7 @@
             this.Controls.Add(this.labAdvice);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.butReload);
-            this.Controls.Add(this.butExit);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labTemperature);
             this.Controls.Add(this.btnSearch);
@@ -624,7 +624,6 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WeatherApplication-v2.0";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -646,7 +645,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labSunset;
         private System.Windows.Forms.Button butReload;
-        private System.Windows.Forms.Button butExit;
+        private System.Windows.Forms.Button btnExit;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label labGrndLevel;

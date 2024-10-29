@@ -3,7 +3,6 @@ using Newtonsoft.Json;
 using System.Drawing;
 using System.Windows.Forms;
 using static Weather.WeatherInfo;
-
 using System.Collections.Generic;
 using System.Linq;
 using LiveCharts;
@@ -11,6 +10,7 @@ using LiveCharts.Wpf;
 using LiveCharts.Defaults;
 using System.Net.Http;
 using System.IO;
+using System.Threading.Tasks;
 namespace WeatherApp
 {
     public partial class Form1 : Form
@@ -147,10 +147,6 @@ namespace WeatherApp
             }
         }
 
-
-
-
-
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -161,18 +157,12 @@ namespace WeatherApp
 
         }
 
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnShow_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void butExit_Click(object sender, EventArgs e)
+        private void ButExit_Click(object sender, EventArgs e)
         {
 
         }

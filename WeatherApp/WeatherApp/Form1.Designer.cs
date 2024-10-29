@@ -36,7 +36,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.labSunrise = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labSunset = new System.Windows.Forms.Label();
             this.butReload = new System.Windows.Forms.Button();
@@ -70,6 +69,8 @@
             this.labDateTime2 = new System.Windows.Forms.Label();
             this.picIcon = new System.Windows.Forms.PictureBox();
             this.labDateTime = new System.Windows.Forms.Label();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -93,11 +94,11 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.White;
-            this.btnShow.Location = new System.Drawing.Point(1379, 683);
+            this.btnShow.Location = new System.Drawing.Point(1329, 683);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(78, 38);
+            this.btnShow.Size = new System.Drawing.Size(132, 38);
             this.btnShow.TabIndex = 45;
-            this.btnShow.Text = "Tải ";
+            this.btnShow.Text = "Tải Lại Bảng";
             this.btnShow.UseVisualStyleBackColor = false;
             // 
             // labDetail2
@@ -129,11 +130,11 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(767, 409);
+            this.dataGridView1.Location = new System.Drawing.Point(767, 504);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(606, 312);
+            this.dataGridView1.Size = new System.Drawing.Size(552, 217);
             this.dataGridView1.TabIndex = 42;
             // 
             // label3
@@ -159,18 +160,6 @@
             this.labSunrise.Size = new System.Drawing.Size(48, 28);
             this.labSunrise.TabIndex = 6;
             this.labSunrise.Text = "N/A";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(910, 378);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(298, 28);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Nhiệt Độ Của 5 Ngày Tiếp Theo";
             // 
             // label7
             // 
@@ -600,6 +589,15 @@
             this.labDateTime.TabIndex = 36;
             this.labDateTime.Text = "Giờ:";
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(767, 405);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(552, 100);
+            this.elementHost1.TabIndex = 47;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.cartesianChart1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -607,12 +605,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1473, 749);
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.labDetail2);
             this.Controls.Add(this.labAdvice);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.butReload);
             this.Controls.Add(this.butExit);
             this.Controls.Add(this.groupBox1);
@@ -645,7 +643,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labSunrise;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labSunset;
         private System.Windows.Forms.Button butReload;
@@ -679,6 +676,8 @@
         private System.Windows.Forms.Label labDateTime2;
         private System.Windows.Forms.PictureBox picIcon;
         private System.Windows.Forms.Label labDateTime;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private LiveCharts.Wpf.CartesianChart cartesianChart1;
     }
 }
 

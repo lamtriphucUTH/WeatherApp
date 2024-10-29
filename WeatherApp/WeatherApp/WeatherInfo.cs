@@ -32,6 +32,7 @@ namespace Weather
         }
 
 
+        
         public class wind
         {
             public double speed { get; set; }

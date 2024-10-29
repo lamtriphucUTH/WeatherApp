@@ -2,9 +2,8 @@
 using Newtonsoft.Json;
 using System.Drawing;
 using System.Windows.Forms;
-<<<<<<< HEAD
 using static Weather.WeatherInfo;
-=======
+
 using System.Collections.Generic;
 using System.Linq;
 using LiveCharts;
@@ -12,9 +11,6 @@ using LiveCharts.Wpf;
 using LiveCharts.Defaults;
 using System.Net.Http;
 using System.IO;
-
->>>>>>> 2e8e83c930044a3588d4a6fb7dd269697e00cbca
-
 namespace WeatherApp
 {
     public partial class Form1 : Form

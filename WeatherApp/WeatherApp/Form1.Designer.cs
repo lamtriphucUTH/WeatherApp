@@ -159,7 +159,6 @@
             this.labSunrise.Size = new System.Drawing.Size(48, 28);
             this.labSunrise.TabIndex = 6;
             this.labSunrise.Text = "N/A";
-            this.labSunrise.Click += new System.EventHandler(this.labSunrise_Click);
             // 
             // label15
             // 

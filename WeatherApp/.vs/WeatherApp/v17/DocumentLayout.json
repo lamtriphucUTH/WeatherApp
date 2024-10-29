@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\weatherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|d:\\study\\weatherapp\\weatherapp\\weatherapp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|d:\\study\\weatherapp\\weatherapp\\weatherapp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{625375DE-77AA-4D28-A643-F0838534F1B2}|WeatherApp\\WeatherApp.csproj|solutionrelative:weatherapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -46,8 +46,7 @@
               "RelativeToolTip": "WeatherApp\\Form1.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T08:12:09.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T08:12:09.329Z"
             },
             {
               "$type": "Document",
@@ -57,7 +56,7 @@
               "RelativeDocumentMoniker": "WeatherApp\\Form1.cs",
               "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs",
               "RelativeToolTip": "WeatherApp\\Form1.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAYwHsAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAYwJAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T12:34:41.746Z",
               "EditorCaption": ""
@@ -70,7 +69,7 @@
               "RelativeDocumentMoniker": "WeatherApp\\WeatherInfo.cs",
               "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherInfo.cs",
               "RelativeToolTip": "WeatherApp\\WeatherInfo.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T12:29:43.53Z",
               "EditorCaption": ""
@@ -85,8 +84,7 @@
               "RelativeToolTip": "WeatherApp\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T12:29:40.865Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T12:29:40.865Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "ToolTip": "D:\\STUDY\\WeatherApp\\WeatherApp\\WeatherApp\\WeatherApp\\Form1.cs [Design]",
               "RelativeToolTip": "WeatherApp\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T00:06:03.473Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-10-22T00:06:03.473Z"
             }
           ]
         }

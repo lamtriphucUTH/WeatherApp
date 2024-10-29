@@ -47,6 +47,27 @@ namespace WeatherApp
             throw new NotImplementedException();
         }
 
+        private void UpdateCurrentWeather(root currentInfo)
+        {
+            picIcon.LoadAsync("https://openweathermap.org/img/wn/" + currentInfo.weather[0].icon + ".png"); // Sử dụng LoadAsync
+            labCondition.Text = currentInfo.weather[0].main;
+            labDetail.Text = currentInfo.weather[0].description;
+            labSunset.Text = convertDatime(currentInfo.sys.sunset).ToShortTimeString();
+            labSunrise.Text = convertDatime(currentInfo.sys.sunrise).ToShortTimeString();
+            labTemp_max.Text = $"{currentInfo.main.temp_max - 273.15} °C";
+            labTemp_min.Text = $"{currentInfo.main.temp_min - 273.15} °C";
+            double tempCelsius = currentInfo.main.temp - 273.15;
+            labTemperature.Text = $"{tempCelsius:0.#}°C";
+            labWindSpeed.Text = $"{currentInfo.wind.speed} m/s";
+            labPressure.Text = $"{currentInfo.main.pressure} hPa";
+            labHumidity.Text = $"{currentInfo.main.humidity} %";
+            labFeels_like.Text = $"{currentInfo.main.feels_like - 273.15} °C";
+            labSeaLevel.Text = $"{currentInfo.main.sea_level} hPa";
+            labGrndLevel.Text = $"{currentInfo.main.grnd_level} hPa";
+
+            UpdateWeatherAdvice(currentInfo.weather[0].description.ToLower());
+        }
+
         private void TimerDateTime_Tick(object sender, EventArgs e)
         {
             throw new NotImplementedException();

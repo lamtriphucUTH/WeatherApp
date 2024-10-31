@@ -70,9 +70,107 @@ namespace WeatherApp
             UpdateWeatherAdvice(currentInfo.weather[0].description.ToLower());
         }
 
+
+	 // Hàm để cập nhật lời khuyên
         private void UpdateWeatherAdvice(object value)
         {
-            throw new NotImplementedException();
+
+	    switch (condition)
+            {
+                case "light rain":
+                    labDetail2.Text = "Mưa nhỏ";
+                    labAdvice.Text = "Trời mưa nhẹ, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "scattered clouds":
+                    labDetail2.Text = "Mây rải rác";
+                    labAdvice.Text = "Trời có mây rải rác, bạn có thể thoải mái đi lại.";
+                    break;
+                case "broken clouds":
+                    labDetail2.Text = "Mây rải rác";
+                    labAdvice.Text = "Trời có mây rải rác, bạn có thể thoải mái đi lại.";
+                    break;
+                case "light intensity drizzle":
+                    labDetail2.Text = "Mưa phùn nhỏ";
+                    labAdvice.Text = "Trời mưa phùn nhỏ, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "drizzle":
+                    labDetail2.Text = "Mưa phùn";
+                    labAdvice.Text = "Trời mưa phùn, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "heavy intensity drizzle":
+                    labDetail2.Text = "Mưa phùn lớn";
+                    labAdvice.Text = "Trời mưa phùn lớn, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "clear sky":
+                    labDetail2.Text = "Trời quang đãng";
+                    labAdvice.Text = "Trời quang đãng, bạn có thể thoải mái đi lại.";
+                    break;
+                case "few clouds":
+                    labDetail2.Text = "Ít mây";
+                    labAdvice.Text = "Trời có ít mây, bạn có thể thoải mái đi lại.";
+                    break;
+                case "overcast clouds":
+                    labDetail2.Text = "Trời u ám";
+                    labAdvice.Text = "Trời u ám, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "moderate rain":
+                    labDetail2.Text = "Mưa vừa";
+                    labAdvice.Text = "Trời mưa vừa, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "heavy intensity rain":
+                    labDetail2.Text = "Mưa lớn";
+                    labAdvice.Text = "Trời mưa lớn, bạn nên mang theo ô đề phòng.";
+                    break;
+                case "snow":
+                    labDetail2.Text = "Tuyết";
+                    labAdvice.Text = "Trời có tuyết, bạn nên mang theo áo ấm.";
+                    break;
+                case "mist":
+                    labDetail2.Text = "Sương mù";
+                    labAdvice.Text = "Trời có sương mù, bạn nên chú ý khi lái xe.";
+                    break;
+                case "haze":
+                    labDetail2.Text = "Sương mù";
+                    labAdvice.Text = "Trời có sương mù, bạn nên chú ý khi lái xe.";
+                    break;
+                case "thunderstorm":
+                    labDetail2.Text = "Dông";
+                    labAdvice.Text = "Trời có dông, bạn nên ở trong nhà.";
+                    break;
+                case "thunderstorm with light rain":
+                    labDetail2.Text = "Dông với mưa nhỏ";
+                    labAdvice.Text = "Trời có dông với mưa nhỏ, bạn nên ở trong nhà.";
+                    break;
+                case "thunderstorm with rain":
+                    labDetail2.Text = "Dông với mưa";
+                    labAdvice.Text = "Trời có dông với mưa, bạn nên ở trong nhà.";
+                    break;
+                case "thunderstorm with heavy rain":
+                    labDetail2.Text = "Dông với mưa lớn";
+                    labAdvice.Text = "Trời có dông với mưa lớn, bạn nên ở trong nhà.";
+                    break;
+                case "thunderstorm with light drizzle":
+                    labDetail2.Text = "Dông với mưa phùn nhỏ";
+                    labAdvice.Text = "Trời có dông với mưa phùn nhỏ, bạn nên ở trong nhà.";
+                    break;
+                case "thunderstorm with drizzle":
+                    labDetail2.Text = "Dông với mưa phùn";
+                    labAdvice.Text = "Trời có dông với mưa phùn, bạn nên ở trong nhà.";
+                    break;
+                case "thunderstorm with heavy drizzle":
+                    labDetail2.Text = "Dông với mưa phùn lớn";
+                    labAdvice.Text = "Trời có dông với mưa phùn lớn, bạn nên ở trong nhà.";
+                    break;
+                case "light snow":
+                    labDetail2.Text = "Tuyết nhẹ";
+                    labAdvice.Text = "Trời có tuyết nhẹ, bạn nên mang theo áo ấm.";
+                    break;
+                default:
+                    labDetail2.Text = "Không rõ! Không thể xác định!";
+                    labAdvice.Text = "Thời tiết hiện tại: " + condition;
+                    break;
+            }
+
         }
 
         private static void NewMethod()

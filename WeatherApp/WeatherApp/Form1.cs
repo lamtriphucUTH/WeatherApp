@@ -44,9 +44,48 @@ namespace WeatherApp
             GetCurrentLocationWeather();
         }
 
-        private void GetCurrentLocationWeather()
+        // Cập nhật DataGridView với thông tin dự báo thời tiết
+        private GetCurrentLocationWeather Task UpdateForecast(ForecastRoot forecastInfo)
         {
-            throw new NotImplementedException();
+            dataGridView1.Rows.Clear();
+
+            // Tạo danh sách Task để tải hình ảnh không đồng bộ
+            List<Task<Bitmap>> imageTasks = new List<Task<Bitmap>>();
+
+            foreach (var forecast in forecastInfo.list)
+            {
+                DateTime forecastDateTime = convertDatime(forecast.dt);
+                double tempCelsius = forecast.main.temp - 273.15;
+                string condition = forecast.weather[0].description;
+                string iconUrl = "https://openweathermap.org/img/wn/" + forecast.weather[0].icon + ".png";
+
+                // Thêm Task tải hình ảnh vào danh sách
+                imageTasks.Add(GetImageFromUrl(iconUrl));
+
+                // Thêm dòng mới vào DataGridView (chưa có hình ảnh)
+                int rowIndex = dataGridView1.Rows.Add(
+                    forecastDateTime.ToShortDateString(),
+                    forecastDateTime.ToShortTimeString(),
+                    $"{tempCelsius:0.#}°C",
+                    condition,
+                    null // Chưa có hình ảnh, sẽ cập nhật sau
+                );
+
+                // Lưu Task tải hình ảnh vào tag của dòng để sử dụng sau
+                dataGridView1.Rows[rowIndex].Tag = imageTasks.Last();
+            }
+
+            // Chờ tất cả hình ảnh tải xong
+            Bitmap[] weatherIcons = await Task.WhenAll(imageTasks);
+
+            // Cập nhật hình ảnh cho từng dòng
+            for (int i = 0; i < weatherIcons.Length; i++)
+            {
+                if (dataGridView1.Rows.Count > i)
+                {
+                    dataGridView1.Rows[i].Cells["WeatherIcon"].Value = weatherIcons[i];
+                }
+            }
         }
 
         private void UpdateCurrentWeather(root currentInfo)

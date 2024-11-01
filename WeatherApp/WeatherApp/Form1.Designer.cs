@@ -59,9 +59,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.labTemp_max = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.labTemp_min = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.labTemperature = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.TBCity = new System.Windows.Forms.TextBox();
@@ -71,6 +69,7 @@
             this.labDateTime = new System.Windows.Forms.Label();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.cartesianChart1 = new LiveCharts.Wpf.CartesianChart();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picIcon)).BeginInit();
@@ -130,11 +129,11 @@
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.AliceBlue;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(767, 504);
+            this.dataGridView1.Location = new System.Drawing.Point(767, 379);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(552, 217);
+            this.dataGridView1.Size = new System.Drawing.Size(552, 342);
             this.dataGridView1.TabIndex = 42;
             // 
             // label3
@@ -143,7 +142,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(330, 35);
+            this.label3.Location = new System.Drawing.Point(13, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 28);
             this.label3.TabIndex = 5;
@@ -155,7 +154,7 @@
             this.labSunrise.BackColor = System.Drawing.Color.Transparent;
             this.labSunrise.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labSunrise.ForeColor = System.Drawing.Color.Transparent;
-            this.labSunrise.Location = new System.Drawing.Point(492, 35);
+            this.labSunrise.Location = new System.Drawing.Point(175, 29);
             this.labSunrise.Name = "labSunrise";
             this.labSunrise.Size = new System.Drawing.Size(48, 28);
             this.labSunrise.TabIndex = 6;
@@ -167,7 +166,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Transparent;
-            this.label7.Location = new System.Drawing.Point(328, 78);
+            this.label7.Location = new System.Drawing.Point(11, 71);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(147, 28);
             this.label7.TabIndex = 8;
@@ -179,7 +178,7 @@
             this.labSunset.BackColor = System.Drawing.Color.Transparent;
             this.labSunset.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labSunset.ForeColor = System.Drawing.Color.Transparent;
-            this.labSunset.Location = new System.Drawing.Point(492, 78);
+            this.labSunset.Location = new System.Drawing.Point(175, 71);
             this.labSunset.Name = "labSunset";
             this.labSunset.Size = new System.Drawing.Size(48, 28);
             this.labSunset.TabIndex = 9;
@@ -210,7 +209,6 @@
             this.btnExit.TabIndex = 39;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // label10
             // 
@@ -218,7 +216,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(323, 262);
+            this.label10.Location = new System.Drawing.Point(352, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(114, 28);
             this.label10.TabIndex = 21;
@@ -230,7 +228,7 @@
             this.labGrndLevel.BackColor = System.Drawing.Color.Transparent;
             this.labGrndLevel.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labGrndLevel.ForeColor = System.Drawing.Color.Transparent;
-            this.labGrndLevel.Location = new System.Drawing.Point(194, 219);
+            this.labGrndLevel.Location = new System.Drawing.Point(527, 165);
             this.labGrndLevel.Name = "labGrndLevel";
             this.labGrndLevel.Size = new System.Drawing.Size(48, 28);
             this.labGrndLevel.TabIndex = 21;
@@ -241,8 +239,8 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.labSunrise);
             this.groupBox1.Controls.Add(this.labSunset);
+            this.groupBox1.Controls.Add(this.labSunrise);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.labGrndLevel);
             this.groupBox1.Controls.Add(this.label2);
@@ -258,14 +256,10 @@
             this.groupBox1.Controls.Add(this.labFeels_like);
             this.groupBox1.Controls.Add(this.labDetail);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.labTemp_max);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.labTemp_min);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Location = new System.Drawing.Point(121, 403);
+            this.groupBox1.Location = new System.Drawing.Point(121, 471);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(640, 318);
+            this.groupBox1.Size = new System.Drawing.Size(640, 250);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             // 
@@ -275,7 +269,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(8, 263);
+            this.label2.Location = new System.Drawing.Point(8, 215);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 28);
             this.label2.TabIndex = 22;
@@ -287,7 +281,7 @@
             this.labCondition.BackColor = System.Drawing.Color.Transparent;
             this.labCondition.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labCondition.ForeColor = System.Drawing.Color.White;
-            this.labCondition.Location = new System.Drawing.Point(458, 260);
+            this.labCondition.Location = new System.Drawing.Point(487, 212);
             this.labCondition.Name = "labCondition";
             this.labCondition.Size = new System.Drawing.Size(55, 31);
             this.labCondition.TabIndex = 3;
@@ -299,7 +293,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Transparent;
-            this.label6.Location = new System.Drawing.Point(325, 125);
+            this.label6.Location = new System.Drawing.Point(352, 29);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(117, 28);
             this.label6.TabIndex = 10;
@@ -311,7 +305,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(12, 219);
+            this.label14.Location = new System.Drawing.Point(354, 165);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 28);
             this.label14.TabIndex = 20;
@@ -323,7 +317,7 @@
             this.labWindSpeed.BackColor = System.Drawing.Color.Transparent;
             this.labWindSpeed.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labWindSpeed.ForeColor = System.Drawing.Color.Transparent;
-            this.labWindSpeed.Location = new System.Drawing.Point(492, 125);
+            this.labWindSpeed.Location = new System.Drawing.Point(519, 29);
             this.labWindSpeed.Name = "labWindSpeed";
             this.labWindSpeed.Size = new System.Drawing.Size(48, 28);
             this.labWindSpeed.TabIndex = 11;
@@ -335,7 +329,7 @@
             this.labSeaLevel.BackColor = System.Drawing.Color.Transparent;
             this.labSeaLevel.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labSeaLevel.ForeColor = System.Drawing.Color.Transparent;
-            this.labSeaLevel.Location = new System.Drawing.Point(492, 172);
+            this.labSeaLevel.Location = new System.Drawing.Point(521, 71);
             this.labSeaLevel.Name = "labSeaLevel";
             this.labSeaLevel.Size = new System.Drawing.Size(48, 28);
             this.labSeaLevel.TabIndex = 19;
@@ -347,7 +341,7 @@
             this.labPressure.BackColor = System.Drawing.Color.Transparent;
             this.labPressure.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labPressure.ForeColor = System.Drawing.Color.Transparent;
-            this.labPressure.Location = new System.Drawing.Point(459, 219);
+            this.labPressure.Location = new System.Drawing.Point(523, 118);
             this.labPressure.Name = "labPressure";
             this.labPressure.Size = new System.Drawing.Size(48, 28);
             this.labPressure.TabIndex = 13;
@@ -359,7 +353,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Transparent;
-            this.label12.Location = new System.Drawing.Point(323, 172);
+            this.label12.Location = new System.Drawing.Point(352, 71);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(165, 28);
             this.label12.TabIndex = 18;
@@ -371,7 +365,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(330, 219);
+            this.label4.Location = new System.Drawing.Point(352, 118);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 28);
             this.label4.TabIndex = 12;
@@ -383,7 +377,7 @@
             this.labHumidity.BackColor = System.Drawing.Color.Transparent;
             this.labHumidity.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labHumidity.ForeColor = System.Drawing.Color.Transparent;
-            this.labHumidity.Location = new System.Drawing.Point(194, 172);
+            this.labHumidity.Location = new System.Drawing.Point(194, 165);
             this.labHumidity.Name = "labHumidity";
             this.labHumidity.Size = new System.Drawing.Size(48, 28);
             this.labHumidity.TabIndex = 17;
@@ -395,7 +389,7 @@
             this.labFeels_like.BackColor = System.Drawing.Color.Transparent;
             this.labFeels_like.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labFeels_like.ForeColor = System.Drawing.Color.Transparent;
-            this.labFeels_like.Location = new System.Drawing.Point(194, 125);
+            this.labFeels_like.Location = new System.Drawing.Point(194, 118);
             this.labFeels_like.Name = "labFeels_like";
             this.labFeels_like.Size = new System.Drawing.Size(48, 28);
             this.labFeels_like.TabIndex = 15;
@@ -407,7 +401,7 @@
             this.labDetail.BackColor = System.Drawing.Color.Transparent;
             this.labDetail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labDetail.ForeColor = System.Drawing.Color.White;
-            this.labDetail.Location = new System.Drawing.Point(110, 262);
+            this.labDetail.Location = new System.Drawing.Point(110, 214);
             this.labDetail.Name = "labDetail";
             this.labDetail.Size = new System.Drawing.Size(48, 28);
             this.labDetail.TabIndex = 4;
@@ -419,7 +413,7 @@
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Transparent;
-            this.label13.Location = new System.Drawing.Point(8, 125);
+            this.label13.Location = new System.Drawing.Point(8, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(113, 28);
             this.label13.TabIndex = 14;
@@ -431,7 +425,7 @@
             this.labTemp_max.BackColor = System.Drawing.Color.Transparent;
             this.labTemp_max.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labTemp_max.ForeColor = System.Drawing.Color.Transparent;
-            this.labTemp_max.Location = new System.Drawing.Point(194, 78);
+            this.labTemp_max.Location = new System.Drawing.Point(315, 150);
             this.labTemp_max.Name = "labTemp_max";
             this.labTemp_max.Size = new System.Drawing.Size(48, 28);
             this.labTemp_max.TabIndex = 13;
@@ -443,23 +437,11 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Transparent;
-            this.label11.Location = new System.Drawing.Point(10, 172);
+            this.label11.Location = new System.Drawing.Point(10, 165);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 28);
             this.label11.TabIndex = 16;
             this.label11.Text = "Độ Ẩm:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(8, 78);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 28);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Nhiệt Độ Tối Đa:";
             // 
             // labTemp_min
             // 
@@ -467,23 +449,11 @@
             this.labTemp_min.BackColor = System.Drawing.Color.Transparent;
             this.labTemp_min.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labTemp_min.ForeColor = System.Drawing.Color.Transparent;
-            this.labTemp_min.Location = new System.Drawing.Point(197, 35);
+            this.labTemp_min.Location = new System.Drawing.Point(210, 150);
             this.labTemp_min.Name = "labTemp_min";
             this.labTemp_min.Size = new System.Drawing.Size(48, 28);
             this.labTemp_min.TabIndex = 11;
             this.labTemp_min.Text = "N/A";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Transparent;
-            this.label9.Location = new System.Drawing.Point(6, 35);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(182, 28);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Nhiệt độ tối thiểu:";
             // 
             // labTemperature
             // 
@@ -591,12 +561,24 @@
             // 
             // elementHost1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(767, 405);
+            this.elementHost1.Location = new System.Drawing.Point(121, 379);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(552, 100);
+            this.elementHost1.Size = new System.Drawing.Size(640, 100);
             this.elementHost1.TabIndex = 47;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.cartesianChart1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Transparent;
+            this.label15.Location = new System.Drawing.Point(288, 150);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(21, 28);
+            this.label15.TabIndex = 48;
+            this.label15.Text = "/";
             // 
             // Form1
             // 
@@ -605,6 +587,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1473, 749);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnShow);
@@ -621,6 +604,8 @@
             this.Controls.Add(this.labDateTime2);
             this.Controls.Add(this.picIcon);
             this.Controls.Add(this.labDateTime);
+            this.Controls.Add(this.labTemp_min);
+            this.Controls.Add(this.labTemp_max);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WeatherApplication-v2.0";
@@ -665,9 +650,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label labTemp_max;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labTemp_min;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labTemperature;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox TBCity;
@@ -677,6 +660,7 @@
         private System.Windows.Forms.Label labDateTime;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private LiveCharts.Wpf.CartesianChart cartesianChart1;
+        private System.Windows.Forms.Label label15;
     }
 }
 

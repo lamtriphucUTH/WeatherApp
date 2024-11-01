@@ -16,6 +16,12 @@ namespace WeatherApp
 {
     public partial class Form1 : Form
     {
-      
+        // Cập nhật API key và tạo biến httpClient
+        private Timer timerDateTime;
+        #region API Key
+        private string APIKey = "68d42b9ada53b7dacca41373c7c14a71"; // API key
+        #endregion
+        private HttpClient httpClient = new HttpClient();
+
     }
 }

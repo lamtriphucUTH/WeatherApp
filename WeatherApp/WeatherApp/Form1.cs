@@ -307,6 +307,24 @@ namespace WeatherApp
             throw new NotImplementedException();
         }
 
+        // Lấy dữ liệu hình ảnh từ URL
+        private async Task<Bitmap> GetImageFromUrl(string url)
+        {
+            using (var response = await httpClient.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    using (var stream = await response.Content.ReadAsStreamAsync())
+                    {
+                        return new Bitmap(stream);
+                    }
+                }
+                else
+                {
+                    return null; // Xử lý lỗi tải hình ảnh
+                }
+            }
+        }
 
         // Chuyển đổi Unix Timestamp sang DateTime
         private DateTime convertDatime(long millisec)

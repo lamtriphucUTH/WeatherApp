@@ -23,5 +23,12 @@ namespace WeatherApp
         #endregion
         private HttpClient httpClient = new HttpClient();
 
+        // Khởi tạo AutoComplete
+        private void SetupAutoComplete()
+        {
+            TBCity.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            TBCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
     }
 }

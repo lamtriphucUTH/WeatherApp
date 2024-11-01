@@ -21,8 +21,14 @@ namespace WeatherApp
         #region API Key
         private string APIKey = "68d42b9ada53b7dacca41373c7c14a71"; // API key
         #endregion
-        private HttpClient httpClient = new HttpClient();
 
+        private HttpClient httpClient = new HttpClient();
+        // Khởi tạo AutoComplete
+        private void SetupAutoComplete()
+        {
+            TBCity.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            TBCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
 
     }
 }

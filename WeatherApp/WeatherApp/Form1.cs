@@ -38,5 +38,21 @@ namespace WeatherApp
         }
 
 
+        //Xử lý sự kiện khi nhấn nút Reload
+        private void butReload_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GetCurrentLocationWeather();
+                MessageBox.Show("Tải lại thành công!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
     }
 }
+
+
+

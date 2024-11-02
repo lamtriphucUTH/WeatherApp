@@ -23,12 +23,31 @@ namespace WeatherApp
         #endregion
 
         private HttpClient httpClient = new HttpClient();
+
         // Khởi tạo AutoComplete
         private void SetupAutoComplete()
         {
             TBCity.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             TBCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
+        
+        //Xử lý sự kiện khi thay đổi nội dung trong TextBox thành phố
+        private async void TBCity_TextChanged(object sender, EventArgs e)
+        {
+            string input = TBCity.Text.Trim();
+
+            if (input.Length >= 3)
+            {
+                var suggestions = await GetCitySuggestions(input);
+                if (suggestions != null)
+                {
+                    var autoCompleteCollection = new AutoCompleteStringCollection();
+                    autoCompleteCollection.AddRange(suggestions.ToArray());
+                    TBCity.AutoCompleteCustomSource = autoCompleteCollection;
+                }
+            }
+        }
+
         //Lấy thông tin thời tiết hiện tại từ OpenWeatherMap API
         private async Task<root> GetCurrentWeather(string city)
         {

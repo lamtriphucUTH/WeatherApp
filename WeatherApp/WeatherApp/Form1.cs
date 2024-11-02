@@ -29,7 +29,14 @@ namespace WeatherApp
             TBCity.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             TBCity.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
+        //Lấy thông tin thời tiết hiện tại từ OpenWeatherMap API
+        private async Task<root> GetCurrentWeather(string city)
+        {
+            string weatherUrl = $"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={APIKey}";
+            var weatherJson = await httpClient.GetStringAsync(weatherUrl);
+            return JsonConvert.DeserializeObject<root>(weatherJson);
+        }
 
-        
+
     }
 }

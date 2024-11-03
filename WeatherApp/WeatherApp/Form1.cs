@@ -48,6 +48,56 @@ namespace WeatherApp
             }
         }
 
+        //Hàm lấy thông tin thời tiết theo thành phố
+        private async Task GetWeatherByCity()
+        {
+            string city = TBCity.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(city))
+            {
+                MessageBox.Show("Vui lòng nhập tên thành phố hợp lệ.");
+                return;
+            }
+
+            try
+            {
+                // Lấy thông tin thời tiết hiện tại và dự báo
+                var currentInfo = await GetCurrentWeather(city);
+                var forecastInfo = await GetForecast(city);
+
+                // Cập nhật giao diện
+                UpdateCurrentWeather(currentInfo);
+                await UpdateForecast(forecastInfo);
+
+                // Kiểm tra và hiển thị thông báo thiên tai
+                foreach (var weather in currentInfo.weather)
+                {
+                    if (weather.description.Contains("storm") && !stormWarningDisplayed)
+                    {
+                        stormWarningDisplayed = true;
+                        ShowWarningMessage("Cảnh báo bão!");
+                        break;
+                    }
+                    else if (weather.description.Contains("earthquake") && !earthquakeWarningDisplayed)
+                    {
+                        earthquakeWarningDisplayed = true;
+                        ShowWarningMessage("Cảnh báo động đất!");
+                        break;
+                    }
+                    else if (weather.description.Contains("tsunami") && !tsunamiWarningDisplayed)
+                    {
+                        tsunamiWarningDisplayed = true;
+                        ShowWarningMessage("Cảnh báo sóng thần!");
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
+
         // Khởi tạo biểu đồ 
         private void InitializeChart()
         {

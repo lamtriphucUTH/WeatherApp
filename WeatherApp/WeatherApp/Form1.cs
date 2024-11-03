@@ -75,7 +75,7 @@ namespace WeatherApp
             cartesianChart1.Hoverable = true;
         }
 
-        // Khởi tạo DataGridView (Phúc)
+        // Khởi tạo DataGridView
         private void InitializeDataGridView()
         {
             dataGridView1.Columns.Clear();
@@ -99,6 +99,12 @@ namespace WeatherApp
             dataGridView1.Columns["Condition"].Width = 150;
             dataGridView1.Columns["WeatherIcon"].Width = 100;
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        // Xử lý sự kiện khi nhấn nút Search hoặc Enter trong TextBox thành phố
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await GetWeatherByCity();
         }
 
 

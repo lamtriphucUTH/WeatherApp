@@ -48,6 +48,78 @@ namespace WeatherApp
             }
         }
 
+        // Khởi tạo biểu đồ 
+        private void InitializeChart()
+        {
+            temperatureSeriesCollection = new SeriesCollection();
+            labels = new string[7]; // Khởi tạo labels với kích thước ban đầu là 7
+
+            cartesianChart1.AxisX.Add(new Axis
+            {
+                Title = "Thời gian",
+                Labels = labels
+            });
+
+            cartesianChart1.AxisY.Add(new Axis
+            {
+                Title = "Nhiệt độ (°C)"
+            });
+
+            cartesianChart1.LegendLocation = LegendLocation.Right;
+            cartesianChart1.DataClick += (sender, chartPoint) =>
+            {
+                MessageBox.Show($"Nhiệt độ: {chartPoint.Y}°C");
+            };
+
+            // Cho phép hiển thị tooltip khi di chuột qua các điểm trên biểu đồ
+            cartesianChart1.Hoverable = true;
+        }
+
+        // Khởi tạo DataGridView
+        private void InitializeDataGridView()
+        {
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Date", "Ngày");
+            dataGridView1.Columns.Add("Time", "Giờ");
+            dataGridView1.Columns.Add("Temperature", "Nhiệt Độ");
+            dataGridView1.Columns.Add("Condition", "Trạng Thái");
+
+            var weatherIconColumn = new DataGridViewImageColumn
+            {
+                Name = "WeatherIcon",
+                HeaderText = "Biểu Tượng",
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+
+            dataGridView1.Columns.Add(weatherIconColumn);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView1.Columns["Date"].Width = 100;
+            dataGridView1.Columns["Time"].Width = 70;
+            dataGridView1.Columns["Temperature"].Width = 90;
+            dataGridView1.Columns["Condition"].Width = 150;
+            dataGridView1.Columns["WeatherIcon"].Width = 100;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
+        // Xử lý sự kiện khi nhấn nút Search hoặc Enter trong TextBox thành phố
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            await GetWeatherByCity();
+        }
+
+        // Xử lý sự kiện khi nhấn Enter trong TextBox thành phố
+        private async void TBCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                await GetWeatherByCity();
+                e.Handled = true; // Ngăn chặn âm thanh "ding" khi nhấn Enter
+            }
+        }
+
+
+
+
         //Lấy thông tin thời tiết hiện tại từ OpenWeatherMap API
         private async Task<root> GetCurrentWeather(string city)
         {
@@ -69,6 +141,11 @@ namespace WeatherApp
             {
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

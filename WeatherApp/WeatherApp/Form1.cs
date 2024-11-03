@@ -48,7 +48,7 @@ namespace WeatherApp
             }
         }
 
-        //2. Khởi tạo biểu đồ 
+        // Khởi tạo biểu đồ 
         private void InitializeChart()
         {
             temperatureSeriesCollection = new SeriesCollection();
@@ -74,6 +74,33 @@ namespace WeatherApp
             // Cho phép hiển thị tooltip khi di chuột qua các điểm trên biểu đồ
             cartesianChart1.Hoverable = true;
         }
+
+        // Khởi tạo DataGridView (Phúc)
+        private void InitializeDataGridView()
+        {
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Date", "Ngày");
+            dataGridView1.Columns.Add("Time", "Giờ");
+            dataGridView1.Columns.Add("Temperature", "Nhiệt Độ");
+            dataGridView1.Columns.Add("Condition", "Trạng Thái");
+
+            var weatherIconColumn = new DataGridViewImageColumn
+            {
+                Name = "WeatherIcon",
+                HeaderText = "Biểu Tượng",
+                ImageLayout = DataGridViewImageCellLayout.Zoom
+            };
+
+            dataGridView1.Columns.Add(weatherIconColumn);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView1.Columns["Date"].Width = 100;
+            dataGridView1.Columns["Time"].Width = 70;
+            dataGridView1.Columns["Temperature"].Width = 90;
+            dataGridView1.Columns["Condition"].Width = 150;
+            dataGridView1.Columns["WeatherIcon"].Width = 100;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+        }
+
 
 
         //Lấy thông tin thời tiết hiện tại từ OpenWeatherMap API

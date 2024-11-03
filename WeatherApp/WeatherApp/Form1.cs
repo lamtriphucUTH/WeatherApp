@@ -107,6 +107,17 @@ namespace WeatherApp
             await GetWeatherByCity();
         }
 
+        // Xử lý sự kiện khi nhấn Enter trong TextBox thành phố
+        private async void TBCity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                await GetWeatherByCity();
+                e.Handled = true; // Ngăn chặn âm thanh "ding" khi nhấn Enter
+            }
+        }
+
+
 
 
         //Lấy thông tin thời tiết hiện tại từ OpenWeatherMap API

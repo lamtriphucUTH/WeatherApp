@@ -193,6 +193,70 @@ namespace WeatherApp
             }
         }
 
+        //16. Hàm cập nhật hình nền 
+        private void UpdateBackground(string weatherCondition)
+        {
+            string backgroundImage = "nang.jpg"; // Hình nền mặc định
+
+            switch (weatherCondition.ToLower())
+            {
+                case "rain":
+                case "drizzle":
+                case "thunderstorm":
+                case "light rain":
+                case "thunderstorm with light drizzle":
+                case "thunderstorm with light rain":
+                case "moderate rain":
+                    backgroundImage = "mua2.jpg"; // Hình nền trời mưa
+                    break;
+                case "shower rain":
+                case "light intensity shower rain":
+                case "heavy intensity shower rain":
+                    backgroundImage = "mua2.jpg"; // Hình nền trời mưa
+                    break;
+                case "clouds":
+                case "overcast clouds":
+                case "overcast":
+                    backgroundImage = "amu.jpg";
+                    break;
+                case "heavy intensity rain":
+                case "thunderstorm with rain":
+                case "thunderstorm with heavy rain":
+                    backgroundImage = "mua2.jpg"; // Hình nền trời mưa
+                    break;
+                case "clear":
+                case "clear sky":
+                    backgroundImage = "nang2.jpg"; // Hình nền trời nắng
+                    break;
+                case "scattered clouds":
+                case "broken clouds":// ít mấy
+                case "few clouds":
+                    backgroundImage = "may.jpg"; // Hình nền trời nhiều mây
+                    break;
+                case "snow":
+                    backgroundImage = "tuyet.jpg"; // Hình nền trời tuyết
+                    break;
+
+                case "mist":
+                case "haze":
+                case "fog":
+                case "light intensity drizzle":
+                case "heavy intensity drizzle":
+                    backgroundImage = "suongmu.jpg"; // Hình nền sương mù
+                    break;
+            }
+
+            // Kiểm tra xem file ảnh có tồn tại hay không trước khi gán cho BackgroundImage
+            if (File.Exists(backgroundImage))
+            {
+                this.BackgroundImage = Image.FromFile(backgroundImage);
+                this.BackgroundImageLayout = ImageLayout.Stretch;
+            }
+            else
+            {
+                MessageBox.Show($"Không tìm thấy hình nền: {backgroundImage}");
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 

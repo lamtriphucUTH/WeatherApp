@@ -242,6 +242,20 @@ namespace WeatherApp
                 MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
             }
         }
+        //Xử lý sự kiện khi nhấn nút Show
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            string city = TBCity.Text.Trim();
+            if (!string.IsNullOrWhiteSpace(city))
+            {
+                GetCurrentLocationWeather();
+            }
+        }
+        
+        //Biến để kiểm tra xem cảnh báo bão đã được hiển thị hay chưa
+        private bool stormWarningDisplayed = false; // Cảnh báo bão
+        private bool earthquakeWarningDisplayed = false;// Cảnh báo động đất
+        private bool tsunamiWarningDisplayed = false;// Cảnh báo sóng thần
 
         //16. Hàm cập nhật hình nền 
         private void UpdateBackground(string weatherCondition)

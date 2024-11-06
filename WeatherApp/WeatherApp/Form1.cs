@@ -311,6 +311,77 @@ namespace WeatherApp
         {
 
         }
+
+        //Cập nhật DataGridView và biểu đồ với thông tin dự báo thời tiết
+        private async Task UpdateForecast(ForecastRoot forecastInfo)
+        {
+            dataGridView1.Rows.Clear();
+            temperatureSeriesCollection.Clear();
+
+            // Tạo danh sách dữ liệu dự báo cho 7 ngày tiếp theo
+            var next7DaysForecasts = forecastInfo.list
+                .GroupBy(forecast => DateTimeOffset.FromUnixTimeSeconds(forecast.dt).Date)
+                .Take(7)
+                .Select(group => group.First()) // lấy dữ liệu đầu tiên trong mỗi nhóm
+                .ToList();
+
+            List<Task<Bitmap>> imageTasks = new List<Task<Bitmap>>();
+            ChartValues<ObservablePoint> chartValues = new ChartValues<ObservablePoint>();
+            labels = new string[next7DaysForecasts.Count]; // Cập nhật lại kích thước của labels
+
+            for (int i = 0; i < next7DaysForecasts.Count; i++)
+            {
+                var forecast = next7DaysForecasts[i];
+                DateTime forecastDateTime = ConvertDateTime(forecast.dt);
+                double tempCelsius = forecast.main.temp - 273.15;
+                string condition = forecast.weather[0].description;
+                string iconUrl = $"https://openweathermap.org/img/wn/{forecast.weather[0].icon}@2x.png";
+
+                imageTasks.Add(GetImageFromUrl(iconUrl));
+
+                int rowIndex = dataGridView1.Rows.Add(
+                    forecastDateTime.ToShortDateString(),
+                    forecastDateTime.ToShortTimeString(),
+                    $"{tempCelsius:0.#}°C",
+                    condition,
+                    null
+                );
+
+                dataGridView1.Rows[rowIndex].Tag = imageTasks.Last();
+
+                // thêm dữ liệu vào biểu đồ
+                chartValues.Add(new ObservablePoint { X = i, Y = tempCelsius });
+                labels[i] = forecastDateTime.ToString("dd/MM"); // cập nhật nhãn cho trục X
+            }
+
+            // Update weather icons in DataGridView
+            Bitmap[] weatherIconsForGrid = await Task.WhenAll(imageTasks);
+            for (int i = 0; i < weatherIconsForGrid.Length; i++)
+            {
+                if (dataGridView1.Rows.Count > i)
+                {
+                    dataGridView1.Rows[i].Cells["WeatherIcon"].Value = weatherIconsForGrid[i];
+                }
+            }
+
+            // cập nhật dữ liệu cho biểu đồ
+            LineSeries series = new LineSeries
+            {
+                Title = "Nhiệt độ",
+                Values = chartValues,
+                PointGeometry = DefaultGeometries.Circle,
+                PointGeometrySize = 15,
+                DataLabels = true,
+                LabelPoint = point => $"{point.Y:0.#}°C",
+                Fill = System.Windows.Media.Brushes.Transparent
+            };
+
+            temperatureSeriesCollection.Add(series);
+            cartesianChart1.Series = temperatureSeriesCollection;
+
+            // Update labels for the X axis
+            cartesianChart1.AxisX[0].Labels = labels;
+        }
     }
 }
 

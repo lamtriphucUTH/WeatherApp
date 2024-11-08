@@ -376,7 +376,43 @@ namespace WeatherApp
                     labDetail2.Text = "Trời âm u";
                     labAdvice.Text = "Trời sẽ có mưa, bạn nên mang theo ô đề phòng.";
                     break;
-            
+
+
+                    // Các trường hợp cảnh báo đặc biệt nguy hiểm!
+                case "storm":
+                    labDetail2.Text = "BÃO SẮP ĐẾN!";
+                    labAdvice.Text = "BÃO ĐANG ĐẾN!, BẠN HÃY TÌM NƠI TRÚ ẨN AN TOÀN!";
+                    if (!stormWarningDisplayed)
+                    {
+                        MessageBox.Show("Cảnh báo: BÃO ĐANG ĐẾN! BẠN HÃY TÌM NƠI TRÚ ẨN AN TOÀN .", "CẢNH BÁO BÃO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        stormWarningDisplayed = true;
+                    }
+                    break;
+                case "earthquake":
+                    labDetail2.Text = "ĐỘNG ĐẤT SẮP ĐẾN!";
+                    labAdvice.Text = "SẮP CÓ ĐỘNG ĐẤT, BẠN NÊN TÌM NƠI TRÚ ẨN AN TOÀN!.";
+                    if (!earthquakeWarningDisplayed)
+                    {
+                        MessageBox.Show("Cảnh báo: ĐỘNG ĐẤT ĐANG ĐẾN! BẠN HÃY TÌM NƠI TRÚ ẨN AN TOÀN.", "CẢNH BÁO ĐỘNG ĐẤT", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        earthquakeWarningDisplayed = true;
+                    }
+                    break;
+                case "tsunami":
+                    labDetail2.Text = "SÓNG THẦN SẮP ĐẾN!";
+                    labAdvice.Text = "SẮP CÓ SÓNG THẦN!, BẠN NÊN DI CHUYỂN NƠI LÊN NƠI CAO HƠN, ĐỂ ĐẢM BẢO AN TOÀN!.";
+                    if (!tsunamiWarningDisplayed)
+                    {
+                        MessageBox.Show("Cảnh báo: Sóng thần! Hãy di chuyển đến nơi cao hơn và tránh xa bờ biển.", "Cảnh báo Sóng thần", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        tsunamiWarningDisplayed = true;
+                    }
+                    break;
+                default:
+                    labDetail2.Text = "Không rõ! Không thể xác định thời tiết hiện tại!";
+                    labAdvice.Text = "Thời tiết hiện tại: " + condition;
+                    stormWarningDisplayed = false;
+                    earthquakeWarningDisplayed = false;
+                    tsunamiWarningDisplayed = false;
+                    break;
             }
         }
 

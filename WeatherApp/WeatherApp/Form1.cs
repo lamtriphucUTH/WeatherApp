@@ -148,6 +148,16 @@ namespace WeatherApp
             }
         }
 
+        //Kiểm tra và hiển thị thông báo thiên tai
+        private async void ShowWarningMessage(string message)
+        {
+            MessageBox.Show(message);
+            await Task.Delay(10000); 
+            stormWarningDisplayed = false;
+            earthquakeWarningDisplayed = false;
+            tsunamiWarningDisplayed = false;
+        }
+
         // Khởi tạo biểu đồ 
         private void InitializeChart()
         {

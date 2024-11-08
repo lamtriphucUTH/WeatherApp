@@ -252,6 +252,7 @@ namespace WeatherApp
             }
         }
         
+
         //Biến để kiểm tra xem cảnh báo bão đã được hiển thị hay chưa
         private bool stormWarningDisplayed = false; // Cảnh báo bão
         private bool earthquakeWarningDisplayed = false;// Cảnh báo động đất
@@ -375,6 +376,10 @@ namespace WeatherApp
                     labDetail2.Text = "Trời âm u";
                     labAdvice.Text = "Trời sẽ có mưa, bạn nên mang theo ô đề phòng.";
                     break;
+            
+            }
+        }
+
 
         //16. Hàm cập nhật hình nền 
         private void UpdateBackground(string weatherCondition)
@@ -440,9 +445,24 @@ namespace WeatherApp
                 MessageBox.Show($"Không tìm thấy hình nền: {backgroundImage}");
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
+        //Lấy dữ liệu hình ảnh từ URL 
+        private async Task<Bitmap> GetImageFromUrl(string url)
+        {
+            using (var response = await httpClient.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    using (var stream = await response.Content.ReadAsStreamAsync())
+                    {
+                        return new Bitmap(stream);
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
 
         //Cập nhật DataGridView và biểu đồ với thông tin dự báo thời tiết

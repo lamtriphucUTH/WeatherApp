@@ -158,6 +158,17 @@ namespace WeatherApp
             tsunamiWarningDisplayed = false;
         }
 
+        //Lấy gợi ý thành phố từ OpenWeatherMap Geo API
+        private async Task<List<string>> GetCitySuggestions(string cityName)
+        {
+            string geoApiUrl = $"http://api.openweathermap.org/geo/1.0/direct?q={cityName}&limit=5&appid={APIKey}";
+
+            var response = await httpClient.GetStringAsync(geoApiUrl);
+            var locations = JsonConvert.DeserializeObject<List<GeoLocation>>(response);
+
+            return locations?.Select(location => $"{location.name}, {location.country}").ToList();
+        }
+
         // Khởi tạo biểu đồ 
         private void InitializeChart()
         {

@@ -248,6 +248,34 @@ namespace WeatherApp
             var weatherJson = await httpClient.GetStringAsync(weatherUrl);
             return JsonConvert.DeserializeObject<root>(weatherJson);
         }
+        //Lấy thông tin dự báo thời tiết từ OpenWeatherMap API
+        private async Task<ForecastRoot> GetForecast(string city)
+        {
+            string forecastUrl = $"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={APIKey}";
+            var forecastJson = await httpClient.GetStringAsync(forecastUrl);
+            return JsonConvert.DeserializeObject<ForecastRoot>(forecastJson);
+        }
+        // Lấy thông tin thời tiết cho vị trí hiện tại 
+        private async void GetCurrentLocationWeather()
+        {
+            try
+            {
+                string city = await GetCurrentCity();
+
+                // Lấy thông tin thời tiết hiện tại và dự báo
+                var currentInfo = await GetCurrentWeather(city);
+                var forecastInfo = await GetForecast(city);
+
+                // Cập nhật giao diện
+                TBCity.Text = city;
+                UpdateCurrentWeather(currentInfo);
+                await UpdateForecast(forecastInfo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi xảy ra: " + ex.Message);
+            }
+        }
 
 
         //Xử lý sự kiện khi nhấn nút Reload
@@ -594,6 +622,7 @@ namespace WeatherApp
         }
     }
 }
+
 
 
 

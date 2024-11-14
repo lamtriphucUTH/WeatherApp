@@ -32,20 +32,21 @@ namespace Weather_Application
 
         public class main
         {
-            public double temp { get; set; }
-            public double feels_like { get; set; }
+            public long temp { get; set; }
+            public long feels_like { get; set; }
             public double pressure { get; set; }
             public double humidity { get; set; }
-            public double temp_min { get; set; }
-            public double temp_max { get; set; }
+            public long temp_min { get; set; }
+            public long temp_max { get; set; }
             public double sea_level { get; set; }
             public double grnd_level { get; set; }
         }
 
-        public class Wind
+        public class wind
         {
             public double speed { get; set; }
             public double deg { get; set; }
+            public double gust { get; set; }
         }
 
         public class sys
@@ -56,16 +57,27 @@ namespace Weather_Application
             public string country { get; set; }
         }
 
+        public class rain
+        {
+            public double _3h { get; set; }
+        }
+
+        public class snow
+        {
+            public double all { get; set; }
+        }
+
         public class clouds
         {
             public int all { get; set; }
         }
+
         public class Forecast
         {
             public long dt { get; set; }
             public main main { get; set; }
             public List<weather> weather { get; set; }
-            public Wind wind { get; set; }
+            public wind wind { get; set; }
             public clouds clouds { get; set; }
         }
 
@@ -74,14 +86,13 @@ namespace Weather_Application
             public List<Forecast> list { get; set; }
         }
 
-
         public class root
         {
             public GeoLocation geoLocation { get; set; }
             public coord coord { get; set; }
             public List<weather> weather { get; set; }
             public main main { get; set; }
-            public Wind wind { get; set; }
+            public wind wind { get; set; }
             public sys sys { get; set; }
             public clouds clouds { get; set; }
 
